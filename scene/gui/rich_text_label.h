@@ -553,6 +553,9 @@ private:
 
 	bool fit_content = false;
 
+	LocalVector<double> visible_times;
+	double global_elapsed_time;
+
 	struct ThemeCache {
 		Ref<StyleBox> normal_style;
 		Ref<StyleBox> focus_style;
