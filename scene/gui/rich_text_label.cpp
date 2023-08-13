@@ -5486,7 +5486,13 @@ TextServer::AutowrapMode RichTextLabel::get_autowrap_mode() const {
 void RichTextLabel::set_visible_ratio(float p_ratio) {
 	if (visible_ratio != p_ratio) {
 		_stop_thread();
-
+		/* TODO
+		 *
+		 * This is one place where `_on_visible` should
+		 * be called. I don't know exactly how that'll
+		 * happen yet, though.
+		 *
+		 */
 		if (p_ratio >= 1.0) {
 			visible_characters = -1;
 			visible_ratio = 1.0;
@@ -5804,6 +5810,15 @@ void RichTextLabel::set_visible_characters(int p_visible) {
 	if (visible_characters != p_visible) {
 		_stop_thread();
 
+		/* TODO
+		 *
+		 * This is one place where `_on_visible` should
+		 * be called. I don't know exactly how that'll
+		 * happen yet, though.
+		 *
+		 */
+
+		if (p_ratio >= 1.0) {
 		visible_characters = p_visible;
 		if (p_visible == -1) {
 			visible_ratio = 1;
