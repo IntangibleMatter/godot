@@ -5818,8 +5818,6 @@ void RichTextLabel::set_visible_characters(int p_visible) {
 		 *
 		 */
 
-		if (p_ratio >= 1.0) {
-		visible_characters = p_visible;
 		if (p_visible == -1) {
 			visible_ratio = 1;
 		} else {
